@@ -1,0 +1,18 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<h1>Book Cases</h1>
+    <ul>
+    {% for bookcase in bookcases %}
+        <li>
+            <a href="{% url 'bookcase:detail' bookcase.id %}">{{ bookcase.get_book_case_display }}</a>:
+            <a href="{% url 'bookcase:edit' bookcase.id %}">Edit</a> |
+            <a href="{% url 'bookcase:delete' bookcase.id %}">Delete</a>
+        </li>
+    {% empty %}
+            No Data.
+    {% endfor %}
+    </ul>
+    <a href="/">Home</a> |
+    <a href="{% url 'bookcase:new' %}">New</a>
+{% endblock %}

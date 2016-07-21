@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>CRUD Apps</h1>
+    <ul>
+        <li>
+            <a href="{% url 'bookcase:list' %}">Book Cases</a>
+        </li>
+        <li>
+            <a href="{% url 'author:list' %}">Authors</a>
+        </li>
+        <li>
+            <a href="{% url 'book:list' %}">Books</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+<form method="post">{% csrf_token %}
+	{# lihat method __unicode__() di class model. #}
+	{# Di Java kita familiar dengan method toString(). #}
+    <h3>Are you sure you want to delete "{{ object }}"?</h3>
+    <input type="submit" value="Confirm"/>
+</form>
+<a href="{% url 'bookcase:detail' object.id %}">Back</a>

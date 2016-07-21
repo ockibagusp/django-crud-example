@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Authors</h1>
+	<ul>
+		{% for author in authors %}
+			<li>
+				<a href="{% url 'author:detail' author.id %}">{{ author.name }}</a>: 
+				<a href="{% url 'author:edit' author.id %}">Edit</a> | 
+				<a href="{% url 'author:delete' author.id %}">Delete</a>
+			</li>
+        {% empty %}
+            No Data.
+		{% endfor %}
+	</ul>
+
+	<a href="/">Home</a> |
+	<a href="{% url "author:new" %}">New</a>
+{% endblock %}

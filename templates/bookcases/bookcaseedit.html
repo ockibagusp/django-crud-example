@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Edit Book Case: {{ bookcase }}</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>ID: {{ bookcase.id }}</p>
+    {% include "bookcases/form.html" %}
+    <input type="submit" value="Submit" />
+</form>
+<a href="{% url 'bookcase:detail' bookcase.id %}">Back</a>
+{% endblock %}

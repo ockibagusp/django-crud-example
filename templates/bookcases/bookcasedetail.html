@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Book Case: {{ bookcase }}</h1>
+    <table>
+    <tr>
+        <th>ID</th>
+        <td>{{ bookcase.id }}</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>{{ bookcase.get_book_case_display }}</td>
+    </tr>
+    </table>
+    <a href="{% url 'bookcase:list' %}">Back</a> |
+    <a href="{% url 'bookcase:edit' bookcase.id %}">Edit</a> |
+    <a href="{% url 'bookcase:delete' bookcase.id %}">Delete</a>
+{% endblock %}
